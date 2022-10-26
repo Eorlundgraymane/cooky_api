@@ -1,0 +1,33 @@
+{
+  "name": "cooky_api",
+  "version": "0.0.1",
+  "description": "Backend API handling for Cooky Web App",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-server": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eorlundgraymane/cooky_api.git"
+  },
+  "keywords": [
+    "Cooky",
+    "API"
+  ],
+  "author": "CodeRider",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eorlundgraymane/cooky_api/issues"
+  },
+  "homepage": "https://github.com/Eorlundgraymane/cooky_api#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "express": "^4.18.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.24.0"
+  }
+}
