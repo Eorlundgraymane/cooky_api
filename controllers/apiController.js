@@ -13,7 +13,9 @@ const Recipe = require("../models/recipe");
 const SubRecipe = require("../models/subRecipe");
 const Ingredient = require("../models/ingredient");
 
-exports.ensureAdminAccount = (req, res) => {
+const getController = require("./getController");
+
+exports.ensureAdminAccount = (req, res, next) => {
   User.findOne()
     .then((user) => {
       if (user == null) {
@@ -34,7 +36,7 @@ exports.ensureAdminAccount = (req, res) => {
                 },
               ],
             }).then((user) => {
-              console.log(user);
+              next();
             });
           })
           .catch((err) => {
@@ -53,14 +55,12 @@ exports.ensureAdminAccount = (req, res) => {
             },
           ],
         }).then((user) => {
-          console.log(user);
-          console.log(user.Recipes);
-          if (user.Recipes.length > 0) {
-            console.log(user.Recipes[0].Dishes);
-          }    
-          res.send(user);
+          next();
         });
       }
     })
-    .catch((err) => console.log(err));
+    .catch((err) => {
+      console.log(err);
+      req.sendStatus(500);
+    });
 };
