@@ -13,8 +13,6 @@ const Recipe = require("../models/recipe");
 const SubRecipe = require("../models/subRecipe");
 const Ingredient = require("../models/ingredient");
 
-const getController = require("./getController");
-
 exports.ensureAdminAccount = (req, res, next) => {
   User.findOne()
     .then((user) => {

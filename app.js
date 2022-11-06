@@ -19,7 +19,7 @@ app.use(mainRouter);
 const PORT = process.env.PORT || 3000;
 
 database.sync().then(
-    (result) => {        
+  (result) => {
     console.log(result);
     console.log("DB Connected.");
 
